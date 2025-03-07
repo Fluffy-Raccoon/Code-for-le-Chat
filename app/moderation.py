@@ -4,9 +4,10 @@ from app.config import settings
 def moderate_message(message_content: str) -> (bool, str, float):
     """
     Sends the content to an AI model and classifies it.
+    Returns (is_flagged, category, confidence).
     """
 
-    # AI prompt
+    # Construct the prompt for the AI model
     prompt = f"""
     Classify this message: "{message_content}"
     
